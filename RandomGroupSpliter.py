@@ -46,6 +46,14 @@ def rewardFunction2(current_situation, split_rate, total_sum_label ,noise = Fals
 
 class RandomGroupSplitter:
     def __init__(self, noise, force_bound, tolerance, split_rate, label_matrix):
+        """
+        noise: whether to add noise to the reward function
+        force_bound: whether to force the algorithm to split the group (to be-implement)
+        tolerance: the tolerance of the algorithm (to be-implement)
+        split_rate: the split rate of the labels
+        label_matrix: the label matrix of the dataset, it should be a numpy array that each row is a label distribution in a dataset
+        e.g. [[20,10,0,0], [0,0,20,10]] means there are two dataset, the first dataset has 20 labels in class 1 and 10 labels in class 2
+        """
         self.noise = noise
         self.force_bound = force_bound
         self.tolerance = tolerance
@@ -124,7 +132,7 @@ class RandomGroupSplitter:
                 # print(queue)
             # print(len(queue))
             # print(queue)
-            # print(f"best result: {queue[0]}")
+            print(f"best result: {queue[0]}")
             if queue[0][0] < 0 or len(queue) < 50:
                 end = True
                 result = queue
@@ -139,7 +147,7 @@ class RandomGroupSplitter:
             print(f"{counter}th iteration, len of combination_list: {len(combination_list)}")
             
             
-            if counter == 10: 
+            if counter == 20: 
                 print(f"cannot converge")
                 result = queue
                 break
