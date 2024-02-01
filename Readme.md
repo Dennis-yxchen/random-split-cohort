@@ -24,4 +24,4 @@ tried = RGS.get_tried_combination() # get all tried combination
 
 ## How to realize it?
 
-by the idea of greedy algorithm, we can get the local optimal solution by the guide of the reward function.
+by the idea of greedy algorithm, we can get the local optimal solutions by the guide of the reward function.
